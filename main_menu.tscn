@@ -6,24 +6,24 @@
 script = ExtResource("1_kmg73")
 
 [node name="Start" type="Button" parent="."]
-offset_left = 432.0
-offset_top = 144.0
-offset_right = 720.0
-offset_bottom = 232.0
+offset_left = 445.0
+offset_top = 343.0
+offset_right = 733.0
+offset_bottom = 431.0
 text = "Начать игру"
 
 [node name="Settings" type="Button" parent="."]
-offset_left = 432.0
-offset_top = 272.0
-offset_right = 720.0
-offset_bottom = 360.0
+offset_left = 445.0
+offset_top = 431.0
+offset_right = 733.0
+offset_bottom = 519.0
 text = "Настройки"
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 432.0
-offset_top = 393.0
-offset_right = 720.0
-offset_bottom = 481.0
+offset_left = 445.0
+offset_top = 519.0
+offset_right = 733.0
+offset_bottom = 607.0
 text = "Выход
 "
 

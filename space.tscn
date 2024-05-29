@@ -1,12 +1,15 @@
-[gd_scene format=3 uid="uid://c4utproqfxo80"]
+[gd_scene load_steps=2 format=3 uid="uid://c4utproqfxo80"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jp55k"]
 
 [node name="Space" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 488.0
-offset_top = 296.0
-offset_right = 615.0
-offset_bottom = 319.0
-text = "Это космос"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Ship" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship"]
+position = Vector2(544, 496)
+shape = SubResource("CapsuleShape2D_jp55k")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
