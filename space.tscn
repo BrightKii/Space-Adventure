@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c4utproqfxo80"]
+
+[node name="Space" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 488.0
+offset_top = 296.0
+offset_right = 615.0
+offset_bottom = 319.0
+text = "Это космос"
+horizontal_alignment = 1
+vertical_alignment = 1
