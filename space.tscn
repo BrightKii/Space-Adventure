@@ -1,4 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4utproqfxo80"]
+[gd_scene load_steps=7 format=3 uid="uid://c4utproqfxo80"]
+
+[ext_resource type="Texture2D" uid="uid://bnk7tfehnimxq" path="res://Space Assets/Nairan - Bomber - Base.png" id="1_ak2fy"]
+[ext_resource type="Texture2D" uid="uid://cjf03kqeyeyh3" path="res://Space Assets/parallax-space-backgound.png" id="1_swh86"]
+[ext_resource type="Texture2D" uid="uid://c3dtcp56cufii" path="res://Space Assets/parallax-space-big-planet.png" id="2_o3vw2"]
+[ext_resource type="Texture2D" uid="uid://cus7inc4c1jax" path="res://Space Assets/parallax-space-far-planets.png" id="3_k36gs"]
+[ext_resource type="Texture2D" uid="uid://co8l330w7i4qi" path="res://Space Assets/parallax-space-stars.png" id="4_y0dk2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jp55k"]
 
@@ -10,6 +16,46 @@
 position = Vector2(544, 496)
 shape = SubResource("CapsuleShape2D_jp55k")
 
+[node name="Nairan-Bomber-Base" type="Sprite2D" parent="Ship"]
+position = Vector2(544, 493)
+texture = ExtResource("1_ak2fy")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Parallax-space-backgound" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(587, 336)
+scale = Vector2(4.84559, 4.9625)
+texture = ExtResource("1_swh86")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Parallax-space-big-planet" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(126, 135)
+texture = ExtResource("2_o3vw2")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Parallax-space-far-planets" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(573, 309)
+texture = ExtResource("3_k36gs")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Parallax-space-stars1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(163, 302)
+scale = Vector2(1, 0.9375)
+texture = ExtResource("4_y0dk2")
+
+[node name="Parallax-space-stars2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(911, 380)
+texture = ExtResource("4_y0dk2")
+
+[node name="Parallax-space-stars3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(188, 506)
+texture = ExtResource("4_y0dk2")
+
+[node name="Parallax-space-stars4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(846, 112)
+texture = ExtResource("4_y0dk2")
