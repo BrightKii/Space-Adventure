@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4utproqfxo80"]
+[gd_scene load_steps=14 format=3 uid="uid://c4utproqfxo80"]
 
 [ext_resource type="Texture2D" uid="uid://bnk7tfehnimxq" path="res://Space Assets/Nairan - Bomber - Base.png" id="1_ak2fy"]
 [ext_resource type="Texture2D" uid="uid://cjf03kqeyeyh3" path="res://Space Assets/parallax-space-backgound.png" id="1_swh86"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Ship_movement.gd" id="2_e1p07"]
 [ext_resource type="Texture2D" uid="uid://c3dtcp56cufii" path="res://Space Assets/parallax-space-big-planet.png" id="2_o3vw2"]
 [ext_resource type="Texture2D" uid="uid://cus7inc4c1jax" path="res://Space Assets/parallax-space-far-planets.png" id="3_k36gs"]
+[ext_resource type="Shader" path="res://space.gdshader" id="4_kppsh"]
 [ext_resource type="Texture2D" uid="uid://co8l330w7i4qi" path="res://Space Assets/parallax-space-stars.png" id="4_y0dk2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7q1f8"]
@@ -19,6 +20,10 @@ rings = 8
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jp55k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gktd4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mwlvm"]
+shader = ExtResource("4_kppsh")
+shader_parameter/scroll_speed = null
 
 [node name="Space" type="Node2D"]
 
@@ -59,7 +64,8 @@ texture = ExtResource("1_ak2fy")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Parallax-space-backgound" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(699, 362)
+material = SubResource("ShaderMaterial_mwlvm")
+position = Vector2(712, 355)
 scale = Vector2(5.815, 5.955)
 texture = ExtResource("1_swh86")
 
