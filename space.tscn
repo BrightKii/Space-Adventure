@@ -1,14 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4utproqfxo80"]
+[gd_scene load_steps=12 format=3 uid="uid://c4utproqfxo80"]
 
 [ext_resource type="Texture2D" uid="uid://bnk7tfehnimxq" path="res://Space Assets/Nairan - Bomber - Base.png" id="1_ak2fy"]
 [ext_resource type="Texture2D" uid="uid://cjf03kqeyeyh3" path="res://Space Assets/parallax-space-backgound.png" id="1_swh86"]
+[ext_resource type="Script" path="res://УДАЛИТЬ_Скрипт_примера_метеорита.gd" id="1_vyc7i"]
+[ext_resource type="Script" path="res://Ship_movement.gd" id="2_e1p07"]
 [ext_resource type="Texture2D" uid="uid://c3dtcp56cufii" path="res://Space Assets/parallax-space-big-planet.png" id="2_o3vw2"]
 [ext_resource type="Texture2D" uid="uid://cus7inc4c1jax" path="res://Space Assets/parallax-space-far-planets.png" id="3_k36gs"]
 [ext_resource type="Texture2D" uid="uid://co8l330w7i4qi" path="res://Space Assets/parallax-space-stars.png" id="4_y0dk2"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7q1f8"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_q48xk"]
+radius = 10.0
+height = 20.0
+radial_segments = 8
+rings = 8
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jp55k"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gktd4"]
+
 [node name="Space" type="Node2D"]
+
+[node name="УДАЛИТЬ_Пример_метеорита" type="CharacterBody2D" parent="."]
+position = Vector2(280, 0)
+motion_mode = 1
+script = ExtResource("1_vyc7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="УДАЛИТЬ_Пример_метеорита"]
+shape = SubResource("CircleShape2D_7q1f8")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="УДАЛИТЬ_Пример_метеорита"]
+mesh = SubResource("SphereMesh_q48xk")
 
 [node name="Ship" type="CharacterBody2D" parent="."]
 
@@ -20,13 +43,24 @@ shape = SubResource("CapsuleShape2D_jp55k")
 position = Vector2(544, 493)
 texture = ExtResource("1_ak2fy")
 
+[node name="Ship2" type="StaticBody2D" parent="."]
+position = Vector2(700, 650)
+script = ExtResource("2_e1p07")
+input_cooldown = 0.15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship2"]
+shape = SubResource("CapsuleShape2D_gktd4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ship2"]
+texture = ExtResource("1_ak2fy")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Parallax-space-backgound" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(587, 336)
-scale = Vector2(4.84559, 4.9625)
+position = Vector2(699, 362)
+scale = Vector2(5.815, 5.955)
 texture = ExtResource("1_swh86")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
