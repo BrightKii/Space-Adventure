@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4utproqfxo80"]
+[gd_scene load_steps=11 format=3 uid="uid://c4utproqfxo80"]
 
 [ext_resource type="Texture2D" uid="uid://bnk7tfehnimxq" path="res://Space Assets/Nairan - Bomber - Base.png" id="1_ak2fy"]
 [ext_resource type="Texture2D" uid="uid://cjf03kqeyeyh3" path="res://Space Assets/parallax-space-backgound.png" id="1_swh86"]
@@ -16,8 +16,6 @@ height = 20.0
 radial_segments = 8
 rings = 8
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jp55k"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gktd4"]
 
 [node name="Space" type="Node2D"]
@@ -33,25 +31,15 @@ shape = SubResource("CircleShape2D_7q1f8")
 [node name="MeshInstance2D" type="MeshInstance2D" parent="УДАЛИТЬ_Пример_метеорита"]
 mesh = SubResource("SphereMesh_q48xk")
 
-[node name="Ship" type="CharacterBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship"]
-position = Vector2(544, 496)
-shape = SubResource("CapsuleShape2D_jp55k")
-
-[node name="Nairan-Bomber-Base" type="Sprite2D" parent="Ship"]
-position = Vector2(544, 493)
-texture = ExtResource("1_ak2fy")
-
-[node name="Ship2" type="StaticBody2D" parent="."]
+[node name="Ship" type="StaticBody2D" parent="."]
 position = Vector2(700, 650)
 script = ExtResource("2_e1p07")
 input_cooldown = 0.15
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship"]
 shape = SubResource("CapsuleShape2D_gktd4")
 
-[node name="Sprite2D" type="Sprite2D" parent="Ship2"]
+[node name="Sprite2D" type="Sprite2D" parent="Ship"]
 texture = ExtResource("1_ak2fy")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -59,8 +47,8 @@ texture = ExtResource("1_ak2fy")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Parallax-space-backgound" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(699, 362)
-scale = Vector2(5.815, 5.955)
+position = Vector2(712.58, 364.5)
+scale = Vector2(5.35603, 5.33125)
 texture = ExtResource("1_swh86")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
