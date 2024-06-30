@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4utproqfxo80"]
+[gd_scene load_steps=6 format=3 uid="uid://c4utproqfxo80"]
 
-[ext_resource type="Texture2D" uid="uid://bnk7tfehnimxq" path="res://Space Assets/Nairan - Bomber - Base.png" id="1_ak2fy"]
+[ext_resource type="PackedScene" uid="uid://cisqlfjtxof11" path="res://ship.tscn" id="1_o3r85"]
 [ext_resource type="Script" path="res://УДАЛИТЬ_Скрипт_примера_метеорита.gd" id="1_vyc7i"]
-[ext_resource type="Script" path="res://Ship_movement.gd" id="2_e1p07"]
 [ext_resource type="PackedScene" uid="uid://wwo73a360roa" path="res://game_background.tscn" id="4_7dqli"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7q1f8"]
@@ -13,9 +12,9 @@ height = 20.0
 radial_segments = 8
 rings = 8
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gktd4"]
-
 [node name="Space" type="Node2D"]
+
+[node name="Ship" parent="." instance=ExtResource("1_o3r85")]
 
 [node name="УДАЛИТЬ_Пример_метеорита" type="CharacterBody2D" parent="."]
 position = Vector2(279, 0)
@@ -27,16 +26,5 @@ shape = SubResource("CircleShape2D_7q1f8")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="УДАЛИТЬ_Пример_метеорита"]
 mesh = SubResource("SphereMesh_q48xk")
-
-[node name="Ship" type="StaticBody2D" parent="."]
-position = Vector2(700, 650)
-script = ExtResource("2_e1p07")
-input_cooldown = 0.15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship"]
-shape = SubResource("CapsuleShape2D_gktd4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Ship"]
-texture = ExtResource("1_ak2fy")
 
 [node name="GameBackground" parent="." instance=ExtResource("4_7dqli")]
