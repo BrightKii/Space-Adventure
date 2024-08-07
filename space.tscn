@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4utproqfxo80"]
+[gd_scene load_steps=8 format=3 uid="uid://c4utproqfxo80"]
 
 [ext_resource type="PackedScene" uid="uid://cisqlfjtxof11" path="res://ship.tscn" id="1_o3r85"]
+[ext_resource type="Script" path="res://space.gd" id="1_r8qcf"]
 [ext_resource type="Script" path="res://УДАЛИТЬ_Скрипт_примера_метеорита.gd" id="1_vyc7i"]
 [ext_resource type="PackedScene" uid="uid://wwo73a360roa" path="res://game_background.tscn" id="4_7dqli"]
-[ext_resource type="Texture2D" uid="uid://d3rvburhvpiat" path="res://ВРЕМЕННО_Спрайт_сетки.png" id="4_l5ejy"]
+[ext_resource type="Texture2D" uid="uid://d3rvburhvpiat" path="res://УДАЛИТЬ_Спрайт_сетки.png" id="4_l5ejy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7q1f8"]
 
@@ -14,11 +15,11 @@ radial_segments = 8
 rings = 8
 
 [node name="Space" type="Node2D"]
+script = ExtResource("1_r8qcf")
 
 [node name="Ship" parent="." instance=ExtResource("1_o3r85")]
 
 [node name="УДАЛИТЬ_Пример_метеорита" type="CharacterBody2D" parent="."]
-position = Vector2(279, 0)
 motion_mode = 1
 script = ExtResource("1_vyc7i")
 
@@ -30,8 +31,9 @@ mesh = SubResource("SphereMesh_q48xk")
 
 [node name="GameBackground" parent="." instance=ExtResource("4_7dqli")]
 
-[node name="ВРЕМЕННО_Сетка" type="Sprite2D" parent="."]
-visible = false
+[node name="УДАЛИТЬ_Сетка" type="Sprite2D" parent="."]
 position = Vector2(720, 405)
 scale = Vector2(1.93029, 1.08579)
 texture = ExtResource("4_l5ejy")
+
+[connection signal="ready" from="." to="Ship" method="_on_space_ready"]

@@ -1,8 +1,9 @@
 extends StaticBody2D
 
+
 """
 input_cooldown - это задержка между нажатием клавиш. Позволяет избежать ситуации, когда даже
-	короткое нажатие клавиш воспринимается как многократное, что не даёт пользователю возможность
+	короткое нажатие клавиш воспринимается как многократное, что не даёт игроку возможность
 	сместиться вбок на желаемое количество раз (сразу поймёте, если установите input_cooldown в 0).
 	Также в какой-то степени служит античитом. @export позволяет изменять это свойство в инспекторе,
 	не лазя в код.
@@ -13,36 +14,36 @@ time_since_last_input - Это время с последнего нажатия
 var time_since_last_input = input_cooldown + 1
 
 """
-screen_border_offset - это расстояние от самой крайней дорожки до границы игровой области. @export
-	позволяет изменять это свойство в инспекторе, не лазя в код.
 screen_size - это размер игровой области.
+screen_border_offset - это расстояние от самой крайней дорожки до границы игровой области.
 path_offset - это расстояние между дорожками.
 """
-@export var screen_border_offset = 70
-var screen_size
-var path_offset
+var screen_size = Vector2(0, 0)
+var screen_border_offset = 0
+var path_offset = 0
 
 
 """
-В строке 34
-path_offset = (screen_size.x - 2 * screen_border_offset) / 6
-мы вычисляем расстояние между дорожками, если дорожек 7. Число 6 - не опечатка, так должно быть.
+Эта функция - автоматически созданный обработчик сигнала, отправляемого нодой "Space" когда она
+готова (это нужно, чтобы избежать получения нулевых указателей). Здесь мы получаем ноду "Space" и
+её необходимые свойства (размер игровой области и отступы).
 """
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	screen_size = get_viewport_rect().size   # Получаем размер игровой области.
-	path_offset = (screen_size.x - 2 * screen_border_offset) / 6
+func _on_space_ready():
+	var space = find_parent("Space")
+	screen_size = space.size
+	screen_border_offset = space.screen_border_offset
+	path_offset = space.path_offset
 
 
 """
 Немного костыльный способ обработки пользовательского ввода, столкновения и "телепортации".
 get_axis("teleport_left", "teleport_right") возвращает -1 или 1, если нажаты клавиши,
 соответствующие действиям "teleport_left" (A, ←) или "teleport_right" (D, →).
-В строке 59
+В строке 60
 teleport_vector.x = clampf(path_offset * direction, screen_border_offset - position.x, screen_size.x - screen_border_offset - position.x)
 мы вычисляем новую иксовую составляющую вектора, определяющую куда сместится корабль, а также
 ограничиваем длину этого вектора расстоянием до отступов от границы игровой области. 
-В строке 65
+В строке 66
 if move_and_collide(teleport_vector, false, 0.08, true):
 производим смещение на тот самый вектор и проверяем, что произошло столкновение
 (фактически move_and_collide() возвращает объект, описывающий столкновениее или null, если

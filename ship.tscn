@@ -1,13 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://cisqlfjtxof11"]
 
-[ext_resource type="Script" path="res://Ship_movement.gd" id="1_s0whw"]
+[ext_resource type="Script" path="res://ship_movement.gd" id="1_xyg2p"]
 [ext_resource type="Texture2D" uid="uid://bnk7tfehnimxq" path="res://Space Assets/Nairan - Bomber - Base.png" id="2_4tl8f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gktd4"]
 
 [node name="Ship" type="StaticBody2D"]
-position = Vector2(700, 650)
-script = ExtResource("1_s0whw")
+script = ExtResource("1_xyg2p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_gktd4")

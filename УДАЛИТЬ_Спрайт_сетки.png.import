@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3rvburhvpiat"
-path="res://.godot/imported/ВРЕМЕННО_Спрайт_сетки.png-3375d372665a6e9a749bb288151dd392.ctex"
+path="res://.godot/imported/УДАЛИТЬ_Спрайт_сетки.png-e94a929ff32e7e6e11ee6238f963e29d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ВРЕМЕННО_Спрайт_сетки.png"
-dest_files=["res://.godot/imported/ВРЕМЕННО_Спрайт_сетки.png-3375d372665a6e9a749bb288151dd392.ctex"]
+source_file="res://УДАЛИТЬ_Спрайт_сетки.png"
+dest_files=["res://.godot/imported/УДАЛИТЬ_Спрайт_сетки.png-e94a929ff32e7e6e11ee6238f963e29d.ctex"]
 
 [params]
 

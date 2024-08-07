@@ -16,13 +16,11 @@ motion_mirroring = Vector2(1460, 1660)
 position = Vector2(720, 405)
 scale = Vector2(5.36765, 5.1875)
 texture = ExtResource("1_di7t1")
-metadata/_edit_group_ = true
 
 [node name="Parallax-space-backgound(edited)2" type="Sprite2D" parent="ParallaxLayer"]
 position = Vector2(720, 1235)
 scale = Vector2(5.36765, 5.1875)
 texture = ExtResource("1_di7t1")
-metadata/_edit_group_ = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(1460, 1660)
@@ -30,12 +28,10 @@ motion_mirroring = Vector2(1460, 1660)
 [node name="Parallax-space-big-planet1" type="Sprite2D" parent="ParallaxLayer2"]
 position = Vector2(126, 135)
 texture = ExtResource("2_4elws")
-metadata/_edit_group_ = true
 
 [node name="Parallax-space-big-planet2" type="Sprite2D" parent="ParallaxLayer2"]
 position = Vector2(126, 965)
 texture = ExtResource("2_4elws")
-metadata/_edit_group_ = true
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(1460, 1660)
@@ -43,12 +39,10 @@ motion_mirroring = Vector2(1460, 1660)
 [node name="Parallax-space-far-planets1" type="Sprite2D" parent="ParallaxLayer3"]
 position = Vector2(573, 309)
 texture = ExtResource("3_d2f66")
-metadata/_edit_group_ = true
 
 [node name="Parallax-space-far-planets2" type="Sprite2D" parent="ParallaxLayer3"]
 position = Vector2(573, 1139)
 texture = ExtResource("3_d2f66")
-metadata/_edit_group_ = true
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(1460, 1660)
@@ -57,40 +51,32 @@ motion_mirroring = Vector2(1460, 1660)
 position = Vector2(163, 302)
 scale = Vector2(1, 0.9375)
 texture = ExtResource("4_ffxf6")
-metadata/_edit_group_ = true
 
 [node name="Parallax-space-stars2" type="Sprite2D" parent="ParallaxLayer4"]
 position = Vector2(163, 1132)
 scale = Vector2(1, 0.9375)
 texture = ExtResource("4_ffxf6")
-metadata/_edit_group_ = true
 
 [node name="Parallax-space-stars3" type="Sprite2D" parent="ParallaxLayer4"]
 position = Vector2(911, 380)
 texture = ExtResource("4_ffxf6")
-metadata/_edit_group_ = true
 
 [node name="Parallax-space-stars4" type="Sprite2D" parent="ParallaxLayer4"]
 position = Vector2(911, 1210)
 texture = ExtResource("4_ffxf6")
-metadata/_edit_group_ = true
 
 [node name="Parallax-space-stars5" type="Sprite2D" parent="ParallaxLayer4"]
 position = Vector2(188, 506)
 texture = ExtResource("4_ffxf6")
-metadata/_edit_group_ = true
 
 [node name="Parallax-space-stars6" type="Sprite2D" parent="ParallaxLayer4"]
 position = Vector2(188, 1336)
 texture = ExtResource("4_ffxf6")
-metadata/_edit_group_ = true
 
 [node name="Parallax-space-stars7" type="Sprite2D" parent="ParallaxLayer4"]
 position = Vector2(846, 112)
 texture = ExtResource("4_ffxf6")
-metadata/_edit_group_ = true
 
 [node name="Parallax-space-stars8" type="Sprite2D" parent="ParallaxLayer4"]
 position = Vector2(846, 942)
 texture = ExtResource("4_ffxf6")
-metadata/_edit_group_ = true
